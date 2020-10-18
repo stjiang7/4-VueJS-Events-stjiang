@@ -32,7 +32,27 @@
           </ul>
         </div>
       </nav>
-    <div id="random" class="container-fluid">
+      <div class='containter fluid'>
+        <div class='row' id='randomUsersId'>
+          <div class='col-lg-3 col-md-3 col-sm-3 col-xs-3'>
+            <div class='users' v-for='user in users'>
+              <span class='lastName'>User Id:{{ user.userId }}</span>
+              <span class='lastName'>Name: {{ user.firstName }}</span>
+              <span class='firstName'>{{user.lastNameId}}</span>
+            </div><br/>
+          <form v-on:submit.prevent='createUser()'>
+            <div class='users'>
+              <label for='userFirstName'>First Name</label>
+              <input type='text' v-model='newUser.firstName' class='form-control' id='userFirstName' placeholder='Omkar'>
+              <label for='userLastName'>Last Name</label>
+              <input type='text' v-model='newUser.lastName' class='form-control' id='userLastName' placeholder='Tamhankar'>
+            </div><br/>
+            <input type='submit' value='create User' class='button'>
+          </form>
+          </div>
+        </div>
+      </div>
+    <!--<div id="random" class="container-fluid">
         <h1>Profile</h1>
         <p>Name: {{userName}}</p>
         <p>Country of origin: {{userCountry}}</p>
@@ -44,11 +64,11 @@
         </a>
         <form v-on:submit.prevent="fetchUser()"><button>New User</button></form>
         <br></br>
-        <!----
+        
         <p>Email address: <a href = "mailto: abc@example.com">Harrypotter@hogwarts.edu</a></p>
         <img src="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg" alt="Harry Potter" class="container">
-        <p id="citation">Picture from <a href="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg">Google</a></p>-->
-    </div>
+        <p id="citation">Picture from <a href="https://api.time.com/wp-content/uploads/2014/07/301386_full1.jpg">Google</a></p>
+    </div> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
