@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- my custom CSS goes here-->
     <link rel="stylesheet" href="css/styles.css">
-    <title>Profile</title>
+
+    <title>Comments</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,14 +40,14 @@
       <div class='containter fluid'>
         <div class='row' id='commentTableBody'>
           <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-            <table style="width:100%" class="table">
+            <table style="width:100%" class="table" id="commentTable">
               <thead>
                 <tr>
                   <th scope="col">Comment Id</th>
                   <th scope="col">Comment</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="commentTableBody">
                 <tr class='comments' v-for='comment in comments'>
                   <td><span class='id'>{{ comment.id }}</span></td>
                   <td><span class='id'>{{ comment.commentText }}</span></td>
@@ -55,12 +56,12 @@
             </div>
             </table>
             
-          <form v-on:submit.prevent='createComment()'>
+          <form v-on:submit.prevent='createComment()'id="newCommentForm">
             <div class='comments'>
               <label for='commentCommentText'>Add Comment</label>
-              <input type='text' v-model='newComment.commentText' class='form-control' id='commentCommentText' placeholder='Hello world!'>
+              <input type='text' v-model='newComment.commentText' class='form-control' id='commentText' placeholder='Hello world!'>
             </div><br/>
-            <input type='submit' value='Create Comment' class='button'>
+            <input type='submit' value='Create Comment' class='button'id="submitNewComment">
           </form>
           </div>
         </div>
