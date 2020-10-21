@@ -1,7 +1,7 @@
 use stjiang7;
 Create table commentTable(
 id VARCHAR(64) PRIMARY KEY,
-commentText VARCHAR(64)
+commentText VARCHAR(500)
 );
 
 Insert into commentTable (id, commentText) values

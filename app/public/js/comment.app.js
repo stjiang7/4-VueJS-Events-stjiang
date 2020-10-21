@@ -1,18 +1,18 @@
 waitingApp = new Vue({
-    el: '#comment',
+    el: '#commentTableBody',
     data: {
       comments: [{
-        id: 'Stella',
-        commentText: 'Jiang'
+        id: '',
+        commentText: ''
       }],
-      newUser:{
+      newComment:{
         id: '',
         commentText: ''
       }
     },
     methods: {
       fetchComment() {
-        fetch('api/comments/index.php')
+        fetch('api/comments/')
         .then(response => response.json())
         .then(json =>  {
           this.comments=json;
@@ -20,10 +20,10 @@ waitingApp = new Vue({
         });
       },
       createComment(){
-        this.newComment.id = (this.newComment.firstName.substring(0,1)+this.newUser.lastName).toLowerCase();
-        fetch('api/users/insertusers.php', {
+        //this.newComment.id = (this.Comment.id+=1);
+        fetch('api/comments/create.php', {
           method:'POST',
-          body: JSON.stringify(this.newUser),
+          body: JSON.stringify(this.newComment),
           headers: {
             'Content-Type': 'application/json; charset=utf-8'
           }
@@ -31,21 +31,20 @@ waitingApp = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log('Returned from post:', json);
-          this.users.push(json[0]);
-          this.newUser = this.newUserData();
+          this.comments.push(json[0]);
+          this.newComment = this.newCommentData();
         });
         console.log('Creating (POSTing)...!');
-        console.log(this.newUser);
+        console.log(this.newComment);
       },
-      newUserData() {
+      newCommentData() {
         return {
-          firstName: '',
-          lastName: '',
-          userId: ''
+          id: '',
+          commentText: ''
         }
       }
     },
     created(){
-      this.fetchUser();
+      this.fetchComment();
     }
   });

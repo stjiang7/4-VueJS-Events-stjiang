@@ -29,6 +29,9 @@
             <li class="nav-item">
               <a class="nav-link" href="table.html">Book</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="comments.html">Comments</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -50,21 +53,6 @@
             <input type='submit' value='Create User' class='button'>
           </form>
           </div>
-
-          <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-            <div class='comments' v-for='comment in comments'>
-              <span class='commentText'>Comment: {{ comment.commentText }}</span>
-            </div><br/>
-          <!--<form v-on:submit.prevent='createComment()'>
-            <div class='comments'>
-              <label for='userFirstName'>First Name</label>
-              <input type='text' v-model='newUser.firstName' class='form-control' id='userFirstName' placeholder='Omkar'>
-              <label for='userLastName'>Last Name</label>
-              <input type='text' v-model='newUser.lastName' class='form-control' id='userLastName' placeholder='Tamhankar'>
-            </div><br/>
-            <input type='submit' value='Create User' class='button'>
-          </form>
-          </div>-->
         </div>
       </div>
     <!--<div" class="container-fluid">
@@ -92,6 +80,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/profile.app.js"></script>
+    <script src="js/comment.app.js"></script>
   </body>
 </html>
 
