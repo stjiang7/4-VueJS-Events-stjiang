@@ -1,25 +1,14 @@
-use stjiang;
-Create table Comment(
+use stjiang7;
+Create table commentTable(
 id VARCHAR(64) PRIMARY KEY,
 commentText VARCHAR(64)
 );
 
-Insert into Comment (id, commentText) values
-[
-  {
-    "id": 1,
-    "commentText": "I have something important to say"
-  },
-  {
-    "id": 2,
-    "commentText": "D&S is awesome"
-  },
-  {
-    "id": 3,
-    "commentText": "😁"
-  }
-]
+Insert into commentTable (id, commentText) values
+(1, "I have something important to say"),
+(2, "D&S is awesome"),
+(3, "😁");
 
 show tables;
-select * from Comment;
-delete from Comment where commentId = 'TGregory';
+select * from commentTable;
+delete from commentTable where commentId = 'TGregory';
