@@ -1,7 +1,7 @@
 use stjiang7;
 Create table commentTable(
 id VARCHAR(64) PRIMARY KEY,
-commentText VARCHAR(500)
+commentText VARCHAR(600)
 );
 
 Insert into commentTable (id, commentText) values
@@ -11,4 +11,4 @@ Insert into commentTable (id, commentText) values
 
 show tables;
 select * from commentTable;
-delete from commentTable where commentId = 'TGregory';
+delete from commentTable where id = 'TGregory';
