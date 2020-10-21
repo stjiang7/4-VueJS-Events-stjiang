@@ -2,9 +2,9 @@ waitingApp = new Vue({
     el: '#randomUsersId',
     data: {
       users: [{
-        firstName: '',
-        lastName: '',
-        userId:''
+        firstName: 'Stella',
+        lastName: 'Jiang',
+        userId:'stjiang'
       }],
       newUser:{
         firstName: '',
@@ -14,7 +14,7 @@ waitingApp = new Vue({
     },
     methods: {
       fetchUser() {
-        fetch('api/users/')
+        fetch('api/users/index.php')
         .then(response => response.json())
         .then(json =>  {
           this.users=json;
@@ -32,7 +32,7 @@ waitingApp = new Vue({
         })
         .then( response => response.json() )
         .then( json => {
-          console.log('Returned from post;', json);
+          console.log('Returned from post:', json);
           this.users.push(json[0]);
           this.newUser = this.newUserData();
         });

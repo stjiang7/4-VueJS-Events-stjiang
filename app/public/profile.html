@@ -36,9 +36,9 @@
         <div class='row' id='randomUsersId'>
           <div class='col-lg-3 col-md-3 col-sm-3 col-xs-3'>
             <div class='users' v-for='user in users'>
-              <span class='lastName'>User Id: {{ users.userId }}</span>
-              <span class='lastName'>Name: {{ users.firstName }}</span>
-              <span class='firstName'>{{users.lastName}}</span>
+              <span class='lastName'>User Id: {{ user.userId }}</span>,<br/>
+              <span class='lastName'>Name: {{ user.firstName }}</span>
+              <span class='firstName'>{{user.lastName}}</span>
             </div><br/>
           <form v-on:submit.prevent='createUser()'>
             <div class='users'>
@@ -47,7 +47,7 @@
               <label for='userLastName'>Last Name</label>
               <input type='text' v-model='newUser.lastName' class='form-control' id='userLastName' placeholder='Tamhankar'>
             </div><br/>
-            <input type='submit' value='create User' class='button'>
+            <input type='submit' value='Create User' class='button'>
           </form>
           </div>
         </div>

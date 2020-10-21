@@ -24,7 +24,6 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $guid,
   $_POST['userId'],
   $_POST['firstName'],
   $_POST['lastName'],
